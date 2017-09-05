@@ -66,8 +66,16 @@ void markercallback(const boundingbox_msgs::Boundingbox& msg){
               marker.color.g = 1.0f;
               marker.color.b = 0.0f;
               marker.color.a = 1.0;
- 
-              marker.lifetime = ros::Duration(0.5);
+
+              marker.lifetime = ros::Duration(0.2);
+              ma->markers.push_back(marker);
+
+             
+              marker.type=visualization_msgs::Marker::TEXT_VIEW_FACING;
+              marker.ns="text";
+              marker.text="person";
+              marker.id=num;
+              marker.pose.position.z=0+0.8;
 
               ma->markers.push_back(marker);
 
@@ -104,13 +112,20 @@ void markercallback(const boundingbox_msgs::Boundingbox& msg){
               marker.color.b = 0.0f;
               marker.color.a = 1.0;
  
-             marker.lifetime = ros::Duration(0.5);
+             marker.lifetime = ros::Duration(0.2);
           
-            std::cout<<"x"<<0.00007*(msg.x)*d/0.0397<<"\n";
-             std::cout<<"y"<<0.00007*(msg.y)*d/0.0397<<"\n";
+            //std::cout<<"x"<<0.00007*(msg.x)*d/0.0397<<"\n";
+            // std::cout<<"y"<<0.00007*(msg.y)*d/0.0397<<"\n";
               ma->markers.push_back(marker);
                // marker_pub.publish(marker);
           
+              marker.type=visualization_msgs::Marker::TEXT_VIEW_FACING;
+              marker.ns="text";
+              marker.text="chair";
+              marker.id=num;
+              marker.pose.position.z=0+0.8;
+
+              ma->markers.push_back(marker);
 
     
 
